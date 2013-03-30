@@ -1,0 +1,39 @@
+{% extends "SensioDistributionBundle::Configurator/layout.html.twig" %}
+
+{% block title %}Symfony - Configure database{% endblock %}
+
+{% block content %}
+{#     {% form_theme form "SensioDistributionBundle::Configurator/form.html.twig" %}#}
+
+    <div class="step">
+        {% include "SensioDistributionBundle::Configurator/steps.html.twig" with { "index": index, "count": count } %}
+
+        <h1>Configure your Database</h1>
+        <p>If your website needs a database connection, please configure it here.</p>
+        {{ form_errors(form) }}
+        <form action="{{ path('_configurator_step', { 'index': index }) }}" method="POST" class="form-horizontal">
+        <fieldset>
+            <legend>Database</legend>
+                {{ form_row(form.driver) }}
+                {{ form_row(form.host) }}
+                {{ form_row(form.name) }}
+        </fieldset>
+        <fieldset>
+            <legend>Mailer</legend>
+                {{ form_row(form.user) }}
+                {{ form_row(form.password) }}
+        </fieldset>
+        <fieldset>
+            <legend>Other</legend>
+            {{ form_rest(form) }}
+        </fieldset>
+
+            <div class="form-actions">
+                <p>
+                    <button type="submit" class="btn btn-primary">NEXT STEP</button>
+                </p>
+                <p>* mandatory fields</p>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+
+PosterMessage:
+  name: poster_message_type
+  fields:
+    to:
+      widget:
+        type: choice
+        choices: {user: user, admin: admin}
+    subject:
+      widget:
+        type: text
+    content:
+      widget:
+        type: textarea

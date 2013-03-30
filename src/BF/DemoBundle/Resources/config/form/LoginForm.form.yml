@@ -1,0 +1,9 @@
+LoginForm:
+  name:  
+  fields:
+    _username:
+      widget:
+        type: text
+    _password:
+      widget:
+        type: password

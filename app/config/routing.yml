@@ -1,0 +1,4 @@
+bf_demo:
+    resource: "@BFDemoBundle/Resources/config/routing.yml"
+    prefix:   /bf/demo
+

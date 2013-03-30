@@ -1,0 +1,11 @@
+bf_demo_user_messages:
+    pattern: /messages
+    defaults: { _controller: BFDemoBundle:User:ListerMessages }
+    
+bf_demo_user_poster_message:
+    pattern: /message/post
+    defaults: { _controller: BFDemoBundle:User:PosterMessage }
+    
+bf_demo_user_afficher:
+    pattern: /show
+    defaults: { _controller: BFDemoBundle:User:AfficherUtilisateur }

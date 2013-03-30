@@ -1,0 +1,19 @@
+{% extends 'BFDemoBundle::layout.html.twig' %}
+
+{% block title "Symfony - Contact form" %}
+
+{% block content %}
+    <form action="{{ path('bf_demo_contact') }}" method="POST" id="contact_form" class="form-horizontal">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.email) }}
+        {{ form_row(form.message) }}
+
+        {{ form_rest(form) }}
+        <div class="form-actions">
+        <input type="submit" value="Send" class="btn btn-primary" />
+        </div>
+    </form>
+{% endblock %}
+
+{% set code = code(_self) %}

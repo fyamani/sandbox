@@ -1,0 +1,14 @@
+{% extends 'BFDemoBundle::layout.html.twig' %}
+
+{% block title %}Poster un message{% endblock %}
+
+{% block content %}
+    <form action="{{ path('bf_demo_user_poster_message') }}" method="POST" id="contact_form" class="form-horizontal">
+        {{ form_errors(form) }}
+
+        {{ form_widget(form) }}
+        <div class="form-actions">
+        <input type="submit" value="Send" class="btn btn-primary" />
+        </div>
+    </form>
+{% endblock %}

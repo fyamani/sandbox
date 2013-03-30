@@ -1,0 +1,15 @@
+settings:
+    source: 'BF13BusinessApplicationBundle:InstantMessage'
+    condition: my_messages
+    ref: id
+    columns:
+        id:
+            label: ID
+            type: String
+        subject:
+            label: null
+            type: string
+        was_read:
+            label: null
+            type: string
+            hidden: true

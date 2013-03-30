@@ -1,0 +1,9 @@
+bf_demo:
+    pattern:  /
+    defaults: { _controller: BFDemoBundle:Demo:index }
+
+bf_demo_contact:
+    pattern:  /contact
+    defaults: { _controller: BFDemoBundle:Demo:contact }
+
+    

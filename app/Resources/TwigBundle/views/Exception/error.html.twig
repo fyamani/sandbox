@@ -1,0 +1,22 @@
+{% extends 'BF13BusinessApplicationBundle:Twitter:layout.html.twig' %}
+
+{% block title %}<title>Une erreur est survenue : {{ status_text }}</title>{% endblock %}
+
+{% block main_nav %}
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="main_nav nav">
+    			<li class="active"><a href="#">Erreur</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block base_content %}
+<div id="content">
+		<div class="wrapper">
+		    <h1>Oups! Une erreur est survenue</h1>
+            <h2>Le serveur a retourné une erreur "{{ status_code }} {{ status_text }}".</h2>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'BF13BusinessApplicationBundle::layout.html.twig' %}
+{# {% extends 'BFDemoBundle:Twitter:layout.html.twig' %}#}
+
+{% block base_content %}
+<!-- ** widget ** -->
+<div class="well">
+	<!-- ** widget header ** -->
+	<div class="navbar navbar-heading">
+		<div class="navbar-inner">
+			<div class="container" style="width: auto;">
+				<a id="mapTitle" class="brand" href="#">{% block title %}{% endblock  %}<span></span></a>
+			</div>
+		</div>
+	</div>
+	<!-- ** ./ widget header ** -->
+
+	<div>
+	    {% set content = block('content') %}
+
+        {% if code is defined %}
+            <ul class="nav nav-tabs tabs-two">
+                <li class="active"><a href="#tab_view" data-toggle="tab">View</a></li>
+                <li><a href="#tab_source" data-toggle="tab">Code source</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_view">{{ content|raw }}</div>
+                <div class="tab-pane" id="tab_source">
+                    <div class="block">
+                        <div class="symfony-content">{{ code|raw }}</div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {{ content|raw }}
+        {% endif %}
+	</div>
+</div>
+<!-- ** ./ widget ** -->
+{% endblock base_content %}

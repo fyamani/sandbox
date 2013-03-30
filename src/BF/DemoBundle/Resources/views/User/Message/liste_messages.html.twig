@@ -1,0 +1,38 @@
+{% extends 'BFDemoBundle::layout.html.twig' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+
+<a href="{{ path('bf_demo_user_poster_message') }}"><i class="icon-plus"></i> Poster un message</a>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        {% for col in datagrid.column_headers %}
+	        <th>{{ col }}</th>
+{#    	        <th>{{ col|label_value('##LABEL-LIST##') }}</th> #}
+        {% endfor %}
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in datagrid.column_values %}
+    <tr>
+{#         {% for cell in row %}#}
+        {% for key,col in datagrid.column_headers %}
+	        <td>{{ row[key] }}</td>
+{#    	        <td>{{ cell|value_list('##VALUE-LIST##') }}</td> #}
+        {% endfor %}
+        <td>
+{#         	<a href="{{ path('b_f_main_application_bundle_domaine_action_valeur_objet_afficher', { id: row.id }) }}" class="btn"><i class="icon-eye-open"></i></a>#}
+        {% if row.was_read == 0 %}
+            <a href="#" class="btn"><i class="icon-eye-open"></i></a>
+        {% endif %}
+            <a href="#" class="btn"><i class="icon-trash"></i></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

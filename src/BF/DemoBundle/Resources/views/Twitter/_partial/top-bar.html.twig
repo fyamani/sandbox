@@ -1,0 +1,11 @@
+<div class="blue navbar navbar-static nomargin">
+	<div class="navbar-inner">
+		<div class="container" style="width: auto;">
+{# 			{% include 'BFDemoBundle:Twitter/_partial:top-bar.search.html.twig' %}#}
+
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+			{% include 'BFDemoBundle:Twitter/_partial:top-bar.user.html.twig' %}
+        {% endif %}
+		</div>
+	</div>
+</div>

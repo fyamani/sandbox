@@ -1,0 +1,14 @@
+{% extends 'BFDemoBundle::layout.html.twig' %}
+
+{% block title "BusinessApp - Demos" %}
+
+{% block content %}
+    <h1 class="title">Available demos</h1>
+    <ul id="demo-list">
+        <li><a href="{{ path('bf_demo') }}">Use a form</a></li>
+        <li><a href="{{ path('bf_demo') }}">Retrieve business data</a></li>
+        <li><a href="{{ path('bf_demo') }}">Use a datagrid</a></li>
+        <li><a href="{{ path('bf_demo') }}">Use value list</a></li>
+        <li><a href="{{ path('bf_demo') }}">Render a success/failure message</a></li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+ContactForm:
+  name: contact
+  fields:
+    email:
+      widget:
+        type: email
+    message:
+      widget:
+        type: textarea

@@ -1,0 +1,19 @@
+bf_demo_demo:
+    resource: "@BFDemoBundle/Resources/config/routing/demo.yml"
+    prefix: /demo
+
+bf_demo_welcome:
+    resource: "@BFDemoBundle/Resources/config/routing/welcome.yml"
+    prefix: /welcome
+
+bf_demo_secured:
+    resource: "@BFDemoBundle/Resources/config/routing/secured.yml"
+    prefix: /secured
+
+fos_user_security_logout:
+    pattern:  /login/{name}
+    defaults: { _controller: BFDemoBundle:Default:index, name: john }
+
+bf_demo_user:
+    resource: '@BFDemoBundle/Resources/config/routing/user.yml'
+    prefix: /user

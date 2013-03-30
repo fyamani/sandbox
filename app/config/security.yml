@@ -1,0 +1,48 @@
+jms_security_extra:
+    secure_all_services: false
+    expressions: true
+
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            pattern:  ^/bf/demo/secured/login$
+            anonymous: ~
+#            security: false
+            
+        secured_area:
+            pattern:    ^/
+            anonymous: ~
+            form_login:
+                check_path: bf_security_check
+                login_path: bf_demo_login
+            logout:
+                path:   bf_demo_logout
+                target: bf_demo
+            #anonymous: ~
+            #http_basic:
+            #    realm: "Secured Demo Area"
+
+    access_control:
+        - { path: ^/bf/demo/secured/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/bf/demo/secured/admin, roles: ROLE_ADMIN }
+        - { path: ^/bf/demo/secured, roles: ROLE_USER }
+        - { path: ^/bf/demo/user, roles: ROLE_USER }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }

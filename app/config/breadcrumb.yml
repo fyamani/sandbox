@@ -1,0 +1,42 @@
+# Structure de l'application
+
+Public:
+    Welcome:
+        label: Welcome
+        icon: icon-home
+        default: true
+        nodes:
+            bf_index:
+                label: Index
+                submenu: Actions
+                linked:
+                  - _configurator_step
+                  - _configurator_final
+    Demo:
+        label: Demo
+        icon: icon-tag
+        nodes:
+            bf_demo:
+                label: Démo
+                submenu: Actions
+                linked:
+                  - bf_demo_hello
+            bf_demo_contact:
+                label: Contact
+                submenu: Service
+    Secured:
+        label: Secured
+        icon: icon-lock
+        nodes:
+            bf_demo_user_afficher:
+                label: Mon profil
+                submenu: Actions
+            bf_demo_user_messages:
+                label: Mes messages
+                submenu: Actions
+            bf_demo_logout:
+                label: login/logout
+                submenu: User
+                linked:
+                  - bf_security_check
+                  - bf_demo_login

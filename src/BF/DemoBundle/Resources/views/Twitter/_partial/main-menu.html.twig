@@ -1,0 +1,14 @@
+<ul class="nav nav-pills nav-stacked">
+	<li class="user-container">
+        <a class="brand" href="#"><i class="icon-large icon-cloud"></i></a>
+	</li>
+
+	{% for route, data in rootBreadcrumb() %}
+    	<li {% if data.active %}class="active"{% endif %}>
+    		<a href="{{ path(data.route) }}">
+    			<i class="icon-large {{ data.icon }}"></i>
+    			{{ data.label }}
+    		</a>
+    	</li>
+	{% endfor %}
+</ul>

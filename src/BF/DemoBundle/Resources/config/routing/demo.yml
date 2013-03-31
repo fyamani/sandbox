@@ -6,10 +6,20 @@ bf_demo_contact:
     pattern:  /contact
     defaults: { _controller: BFDemoBundle:Demo:contact }
 
-    
-
 bf_demo_lister_contact:
     pattern:  /contacts
     defaults: { _controller: BFDemoBundle:Demo:listerContacts }
+
+bf_demo_value_list:
+    pattern:  /valuelist
+    defaults: { _controller: BFDemoBundle:Demo:valueList }
+
+bf_demo_make_message:
+    pattern:  /message/call
+    defaults: { _controller: BFDemoBundle:Demo:callMessage }
+
+bf_demo_render_message:
+    pattern:  /message/render
+    defaults: { _controller: BFDemoBundle:Demo:renderMessage }
 
     

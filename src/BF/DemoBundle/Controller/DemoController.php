@@ -63,6 +63,25 @@ class DemoController extends baseController implements BreadcrumbControllerInter
         return $this->render('BFDemoBundle:Demo:liste_contacts.html.twig', array('datagrid' => $datagrid));
     }
 
+    public function ValueListAction()
+    {
+        return $this->render('BFDemoBundle:Demo:value_list.html.twig');
+    }
+
+    public function callMessageAction()
+    {
+        $this->addSuccessMessage('demo message');
+
+        $url = $this->generateUrl('bf_demo_render_message');
+
+        return $this->redirect($url);
+    }
+
+    public function renderMessageAction()
+    {
+        return $this->render('BFDemoBundle:Demo:render_message.html.twig');
+    }
+
     public function getBreadcrumbName()
     {
         return 'Public';

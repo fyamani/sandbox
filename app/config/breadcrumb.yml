@@ -27,6 +27,9 @@ Public:
             bf_demo_lister_contact:
                 label: Grid
                 submenu: Example
+            bf_demo_value_list:
+                label: Liste de valeurs
+                submenu: Example
     Secured:
         label: Secured
         icon: icon-lock

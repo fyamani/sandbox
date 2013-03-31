@@ -12,6 +12,7 @@ use BF13\BusinessApplicationBundle\Service\Breadcrumb\BreadcrumbControllerInterf
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use BF\DemoBundle\Model\ContactMessage;
 
 class DemoController extends baseController implements BreadcrumbControllerInterface
 {
@@ -28,7 +29,9 @@ class DemoController extends baseController implements BreadcrumbControllerInter
      */
     public function contactAction()
     {
-        $form = $this->generateForm('BFDemoBundle:ContactForm');
+        $contactMessage = new ContactMessage();
+
+        $form = $this->generateForm('BFDemoBundle:ContactForm', $contactMessage);
 
         $request = $this->get('request');
         if ('POST' == $request->getMethod()) {
@@ -45,6 +48,19 @@ class DemoController extends baseController implements BreadcrumbControllerInter
         }
 
         return array('form' => $form->createView());
+    }
+
+    public function listerContactsAction()
+    {
+        $contacts = array(
+            array('id' => 1, 'name' => 'john', 'email' => 'john@free.fr'),
+        );
+
+        $datagrid = $this->generateDatagrid('BFDemoBundle:ListeContacts');
+
+        $datagrid->bind($contacts);
+
+        return $this->render('BFDemoBundle:Demo:liste_contacts.html.twig', array('datagrid' => $datagrid));
     }
 
     public function getBreadcrumbName()

@@ -3,7 +3,7 @@
 {% block title "Symfony - Contact form" %}
 
 {% block content %}
-    <form action="{{ path('bf_demo_contact') }}" method="POST" id="contact_form" class="form-horizontal">
+    <form action="{{ path('bf_demo_contact') }}" method="POST" id="contact_form" class="form-horizontal" novalidate>
         {{ form_errors(form) }}
 
         {{ form_row(form.email) }}

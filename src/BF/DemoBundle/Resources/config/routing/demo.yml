@@ -7,3 +7,9 @@ bf_demo_contact:
     defaults: { _controller: BFDemoBundle:Demo:contact }
 
     
+
+bf_demo_lister_contact:
+    pattern:  /contacts
+    defaults: { _controller: BFDemoBundle:Demo:listerContacts }
+
+    

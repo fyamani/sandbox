@@ -1,16 +1,16 @@
 settings:
-    source: 'BF13BusinessApplicationBundle:InstantMessage'
-    type: entity
+    source: 'BFDemoBundle:Contact'
+    type: object
     condition: my_messages
-    ref: id
+    ref: name
     columns:
         id:
             label: ID
             type: String
-        subject:
+        name:
             label: null
             type: string
-        was_read:
+        email:
             label: null
             type: string
-            hidden: true
+#            hidden: true

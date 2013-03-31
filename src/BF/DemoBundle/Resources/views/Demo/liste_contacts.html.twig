@@ -1,0 +1,33 @@
+{% extends 'BFDemoBundle::layout.withtab.html.twig' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block content %}
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        {% for col in datagrid.column_headers %}
+	        <th>{{ col }}</th>
+{#    	        <th>{{ col|label_value('##LABEL-LIST##') }}</th> #}
+        {% endfor %}
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in datagrid.column_values %}
+    <tr>
+{#         {% for cell in row %}#}
+        {% for key,col in datagrid.column_headers %}
+	        <td>{{ row[key] }}</td>
+{#    	        <td>{{ cell|value_list('##VALUE-LIST##') }}</td> #}
+        {% endfor %}
+        <td>**
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% set code = code(_self) %}

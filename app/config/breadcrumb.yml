@@ -18,12 +18,15 @@ Public:
         nodes:
             bf_demo:
                 label: Démo
-                submenu: Actions
+                submenu: Demo
                 linked:
                   - bf_demo_hello
             bf_demo_contact:
-                label: Contact
-                submenu: Service
+                label: Form
+                submenu: Example
+            bf_demo_lister_contact:
+                label: Grid
+                submenu: Example
     Secured:
         label: Secured
         icon: icon-lock

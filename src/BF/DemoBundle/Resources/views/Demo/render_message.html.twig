@@ -1,8 +1,18 @@
 {% extends 'BFDemoBundle::layout.withtab.html.twig' %}
 
-{% block title "Symfony - Contact form" %}
+{% block title "Message" %}
 
 {% block content %}
+<p>Message affiché</p>
 {% endblock %}
 
-{% set code = code(_self) %}
+{% block code %}
+    {% for name, code in code(code_data) %}
+    <div>
+        <fieldset>
+        <legend>{{ name }}</legend>
+        {{ code | raw }}
+        </fieldset>
+    </div>
+    {% endfor %}
+{% endblock code %}

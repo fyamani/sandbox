@@ -47,7 +47,13 @@ class DemoController extends baseController implements BreadcrumbControllerInter
             }
         }
 
-        return array('form' => $form->createView());
+        $code_data = array(
+            'Controller' => array('file' => __FILE__, 'type' => 'php', 'highlight' => array(34)),
+            'Render' => array('file' => __DIR__ . '/../Resources/views/Demo/contact.html.twig', 'type' => 'twig'),
+            'Form' => array('file' => __DIR__ . '/../Resources/config/form/ContactForm.form.yml', 'type' => 'yaml'),
+        );
+
+        return array('form' => $form->createView(), 'code_data' => $code_data);
     }
 
     public function listerContactsAction()
@@ -60,12 +66,22 @@ class DemoController extends baseController implements BreadcrumbControllerInter
 
         $datagrid->bind($contacts);
 
-        return $this->render('BFDemoBundle:Demo:liste_contacts.html.twig', array('datagrid' => $datagrid));
+        $code_data = array(
+                'Controller' => array('file' => __FILE__, 'type' => 'php', 'highlight' => array(65)),
+                'Render' => array('file' => __DIR__ . '/../Resources/views/Demo/liste_contacts.html.twig', 'type' => 'twig'),
+                'Form' => array('file' => __DIR__ . '/../Resources/config/datagrid/ListeContacts.datagrid.yml', 'type' => 'yaml'),
+        );
+
+        return $this->render('BFDemoBundle:Demo:liste_contacts.html.twig', array('datagrid' => $datagrid, 'code_data' => $code_data));
     }
 
     public function ValueListAction()
     {
-        return $this->render('BFDemoBundle:Demo:value_list.html.twig');
+        $code_data = array(
+                'Render' => array('file' => __DIR__ . '/../Resources/views/Demo/value_list.html.twig', 'type' => 'twig', 'highlight' => array(6)),
+        );
+
+        return $this->render('BFDemoBundle:Demo:value_list.html.twig', array('code_data' => $code_data));
     }
 
     public function callMessageAction()
@@ -79,7 +95,11 @@ class DemoController extends baseController implements BreadcrumbControllerInter
 
     public function renderMessageAction()
     {
-        return $this->render('BFDemoBundle:Demo:render_message.html.twig');
+        $code_data = array(
+                'Controller' => array('file' => __FILE__, 'type' => 'php', 'highlight' => array(89)),
+        );
+
+        return $this->render('BFDemoBundle:Demo:render_message.html.twig', array('code_data' => $code_data));
     }
 
     public function getBreadcrumbName()

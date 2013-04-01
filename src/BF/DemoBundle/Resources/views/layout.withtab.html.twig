@@ -11,7 +11,7 @@
             <div class="tab-pane active" id="tab_view">{% block content %}{% endblock  %}</div>
         <div class="tab-pane" id="tab_source">
             <div class="block">
-                <div class="symfony-content">{{ code|raw }}</div>
+                <div class="symfony-content">{% block code %}{% endblock  %}</div>
             </div>
         </div>
     </div>

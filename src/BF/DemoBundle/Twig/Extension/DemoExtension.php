@@ -9,14 +9,8 @@ class DemoExtension extends \Twig_Extension
     protected $loader;
     protected $controller;
 
-    public function __construct(\Twig_LoaderInterface $loader)
+    public function __construct()
     {
-        $this->loader = $loader;
-    }
-
-    public function setController($controller)
-    {
-        $this->controller = $controller;
     }
 
     /**
@@ -29,44 +23,30 @@ class DemoExtension extends \Twig_Extension
         );
     }
 
-    public function getCode($template)
+    public function getCode($data)
     {
-        // highlight_string highlights php code only if '<?php' tag is present.
-        $controller = highlight_string("<?php" . $this->getControllerCode(), true);
-        $controller = str_replace('<span style="color: #0000BB">&lt;?php&nbsp;&nbsp;&nbsp;&nbsp;</span>', '&nbsp;&nbsp;&nbsp;&nbsp;', $controller);
+        $code = array();
 
-        $template = htmlspecialchars($this->getTemplateCode($template), ENT_QUOTES, 'UTF-8');
+        foreach($data as $part => $options)
+        {
+            $data = file_get_contents($options['file']);
+            $geshi = new \GeSHi($data, $options['type']);
+//             $geshi->set_header_type(GESHI_HEADER_NONE);
 
-        // remove the code block
-        $template = str_replace('{% set code = code(_self) %}', '', $template);
+            $geshi->enable_line_numbers(GESHI_NORMAL_LINE_NUMBERS);
+            $geshi->set_line_style('background: #fcfcfc;', 'background: #fcfcfc;');
 
-        return <<<EOF
-<p><strong>Controller Code</strong></p>
-<pre>$controller</pre>
+            if(array_key_exists('highlight', $options))
+            {
+                $geshi->highlight_lines_extra($options['highlight']);
+            }
 
-<p><strong>Template Code</strong></p>
-<pre>$template</pre>
-EOF;
-    }
+            $title = sprintf('%s: %s', $part, basename($options['file']));
 
-    protected function getControllerCode()
-    {
-        $class = get_class($this->controller[0]);
-        if (class_exists('CG\Core\ClassUtils')) {
-            $class = ClassUtils::getUserClass($class);
+            $code[$title] = $geshi->parse_code();
         }
 
-        $r = new \ReflectionClass($class);
-        $m = $r->getMethod($this->controller[1]);
-
-        $code = file($r->getFilename());
-
-        return '    '.$m->getDocComment()."\n".implode('', array_slice($code, $m->getStartline() - 1, $m->getEndLine() - $m->getStartline() + 1));
-    }
-
-    protected function getTemplateCode($template)
-    {
-        return $this->loader->getSource($template->getTemplateName());
+        return $code;
     }
 
     /**

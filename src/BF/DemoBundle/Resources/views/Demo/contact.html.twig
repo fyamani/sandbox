@@ -1,6 +1,6 @@
 {% extends 'BFDemoBundle::layout.withtab.html.twig' %}
 
-{% block title "Symfony - Contact form" %}
+{% block title "Contact form" %}
 
 {% block content %}
     <form action="{{ path('bf_demo_contact') }}" method="POST" id="contact_form" class="form-horizontal" novalidate>
@@ -16,4 +16,13 @@
     </form>
 {% endblock %}
 
-{% set code = code(_self) %}
+{% block code %}
+    {% for name, code in code(code_data) %}
+    <div>
+        <fieldset>
+        <legend>{{ name }}</legend>
+        {{ code | raw }}
+        </fieldset>
+    </div>
+    {% endfor %}
+{% endblock code %}

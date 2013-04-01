@@ -5,16 +5,10 @@ parameters:
 services:
     twig.extension.bf.demo:
       class: BF\DemoBundle\Twig\Extension\DemoExtension
-      arguments: [@twig.loader]
+      arguments: []
       tags:
         - { name: twig.extension }
         
-    bf.demo.controller.listener:
-      class: BF\DemoBundle\EventListener\ControllerListener
-      arguments: [@twig.extension.bf.demo]
-      tags:
-        - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
-
     bf.demo.authentication.listener :
         class: BF\DemoBundle\EventListener\SecurityAuthenticationListener
         arguments: [@bf13.app.notification]

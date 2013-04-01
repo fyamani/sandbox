@@ -6,4 +6,13 @@
     {{ 'ouinon.oui' | value_list('ouinon') }}
 {% endblock %}
 
-{% set code = code(_self) %}
+{% block code %}
+    {% for name, code in code(code_data) %}
+    <div>
+        <fieldset>
+        <legend>{{ name }}</legend>
+        {{ code | raw }}
+        </fieldset>
+    </div>
+    {% endfor %}
+{% endblock code %}

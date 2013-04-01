@@ -28,7 +28,7 @@ Public:
                 label: Grid
                 submenu: Example
             bf_demo_value_list:
-                label: Liste de valeurs
+                label: Value list
                 submenu: Example
     Secured:
         label: Secured

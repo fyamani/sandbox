@@ -86,7 +86,8 @@ class DemoController extends baseController implements BreadcrumbControllerInter
 
     public function callMessageAction()
     {
-        $this->addSuccessMessage('demo message');
+        $this->addSuccessMessage('demo success message');
+        $this->addErrorMessage('demo error message');
 
         $url = $this->generateUrl('bf_demo_render_message');
 
@@ -96,7 +97,7 @@ class DemoController extends baseController implements BreadcrumbControllerInter
     public function renderMessageAction()
     {
         $code_data = array(
-                'Controller' => array('file' => __FILE__, 'type' => 'php', 'highlight' => array(89)),
+                'Controller' => array('file' => __FILE__, 'type' => 'php', 'highlight' => array(89, 90)),
         );
 
         return $this->render('BFDemoBundle:Demo:render_message.html.twig', array('code_data' => $code_data));

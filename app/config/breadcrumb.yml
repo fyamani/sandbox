@@ -21,6 +21,7 @@ Public:
                 submenu: Demo
                 linked:
                   - bf_demo_hello
+                  - bf_demo_render_message
             bf_demo_contact:
                 label: Form
                 submenu: Example

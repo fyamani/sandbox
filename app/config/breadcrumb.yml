@@ -1,5 +1,4 @@
 # Structure de l'application
-
 Public:
     Welcome:
         label: Welcome
@@ -41,6 +40,8 @@ Public:
             bf_demo_user_messages:
                 label: Mes messages
                 submenu: Actions
+                linked:
+                  - bf_demo_user_poster_message
             bf_demo_logout:
                 label: login/logout
                 submenu: User

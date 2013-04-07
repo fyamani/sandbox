@@ -3,8 +3,8 @@ namespace BF\DemoBundle\Controller;
 
 use BF13\BusinessApplicationBundle\Controller\baseController;
 
-use BF13\BusinessApplicationBundle\Service\Breadcrumb\BreadcrumbControllerInterface;
-use BF13\BusinessApplicationBundle\Service\Notification\NotificationMessage;
+use BF13\BusinessApplicationBundle\Breadcrumb\BreadcrumbControllerInterface;
+use BF13\BusinessApplicationBundle\Notification\NotificationMessage;
 
 
 /**

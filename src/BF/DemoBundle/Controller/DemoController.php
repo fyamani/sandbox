@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use BF13\BusinessApplicationBundle\Controller\baseController;
-use BF13\BusinessApplicationBundle\Service\Breadcrumb\BreadcrumbControllerInterface;
+use BF13\BusinessApplicationBundle\Breadcrumb\BreadcrumbControllerInterface;
 
 // these import the "@Route" and "@Template" annotations
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

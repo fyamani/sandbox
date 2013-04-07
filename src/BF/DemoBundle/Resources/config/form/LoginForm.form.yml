@@ -1,9 +1,9 @@
-LoginForm:
+metadata:
   name:  
   fields:
     _username:
       widget:
-        type: text
+        text: ~
     _password:
       widget:
-        type: password
+        password: ~

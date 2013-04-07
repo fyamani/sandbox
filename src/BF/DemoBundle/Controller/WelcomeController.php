@@ -5,7 +5,7 @@ namespace BF\DemoBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use BF13\BusinessApplicationBundle\Controller\baseController;
-use BF13\BusinessApplicationBundle\Service\Breadcrumb\BreadcrumbControllerInterface;
+use BF13\BusinessApplicationBundle\Breadcrumb\BreadcrumbControllerInterface;
 
 class WelcomeController extends baseController implements BreadcrumbControllerInterface
 {

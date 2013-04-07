@@ -1,0 +1,7 @@
+bf_demo_valuelist_value_add:
+    pattern:  /value/add
+    defaults: { _controller: BFDemoBundle:ValueList:createValue }
+
+bf_demo_valuelist_value_edit:
+    pattern:  /value/{id}
+    defaults: { _controller: BFDemoBundle:ValueList:editValue }

@@ -1,0 +1,16 @@
+metadata:
+  name: vlvalue
+  fields:
+    ValueList:
+      widget:
+        entity:
+          class: BF13\BusinessApplicationBundle\Entity\ValueList
+          property: name
+    value_key:
+      widget:
+        label: Clé
+        text: ~
+    value:
+      widget:
+        label: Clé
+        text: ~

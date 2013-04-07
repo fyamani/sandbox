@@ -17,3 +17,7 @@ fos_user_security_logout:
 bf_demo_user:
     resource: '@BFDemoBundle/Resources/config/routing/user.yml'
     prefix: /user
+    
+bf_demo_valuelist:
+    resource: '@BFDemoBundle/Resources/config/routing/value_list.yml'
+    prefix: /valuelist    

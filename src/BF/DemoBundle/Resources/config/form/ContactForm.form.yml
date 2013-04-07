@@ -1,9 +1,9 @@
-ContactForm:
+metadata:
   name: contact
   fields:
     email:
       widget:
-        type: email
+        email: ~
     message:
       widget:
-        type: textarea
+        textarea: ~

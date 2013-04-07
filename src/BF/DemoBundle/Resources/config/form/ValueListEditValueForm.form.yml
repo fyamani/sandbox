@@ -1,0 +1,24 @@
+metadata:
+  name: vlvalue
+  fields:
+#    ValueList:
+#      widget:
+#        entity:
+#          class: BF13\BusinessApplicationBundle\Entity\ValueList
+#          property: name
+    value_key:
+      widget:
+        text:
+          label: Clé
+    value:
+      widget:
+        text: 
+          label: Valeur
+  subforms:
+    ValueList:
+      data_class: BF13\BusinessApplicationBundle\Entity\ValueList
+      fields:
+        name:
+          widget:
+            text:
+              disabled: true

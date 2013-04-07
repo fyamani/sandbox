@@ -1,0 +1,12 @@
+{% extends 'BFDemoBundle::layout.html.twig' %}
+
+{% block title "Ajouter une valeur" %}
+
+{% block content %}
+    <form action="{{ path("bf_demo_valuelist_value_add") }}" method="post" class="form-horizontal" novalidate>
+
+        {{ form_widget(form) }}
+
+        <div class="form-actions"><input type="submit" class="btn btn-primary" /></div>
+    </form>
+{% endblock %}

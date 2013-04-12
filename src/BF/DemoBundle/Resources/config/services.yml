@@ -1,6 +1,6 @@
 parameters:
-    bf.demo.breadcrumb.class: BF13\BusinessApplicationBundle\Breadcrumb\Breadcrumb
-    bf.demo.breadcrumb.extension.class: BF13\BusinessApplicationBundle\Breadcrumb\TwigExtension\BreadcrumbExtension
+    bf.demo.breadcrumb.class: BF13\Component\Breadcrumb\Breadcrumb
+    bf.demo.breadcrumb.extension.class: BF13\Component\Breadcrumb\TwigExtension\BreadcrumbExtension
 
 services:
     twig.extension.bf.demo:

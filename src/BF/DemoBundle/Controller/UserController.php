@@ -1,15 +1,15 @@
 <?php
 namespace BF\DemoBundle\Controller;
 
-use BF13\BusinessApplicationBundle\Controller\baseController;
+use BF13\Bundle\BusinessApplicationBundle\Controller\Controller;
 
-use BF13\BusinessApplicationBundle\Breadcrumb\BreadcrumbControllerInterface;
-use BF13\BusinessApplicationBundle\Notification\NotificationMessage;
+use BF13\Component\Breadcrumb\BreadcrumbControllerInterface;
 
+use BF13\Component\Notification\NotificationMessage;
 
 /**
  */
-class UserController extends baseController implements BreadcrumbControllerInterface
+class UserController extends Controller implements BreadcrumbControllerInterface
 {
     public function ListerMessagesAction()
     {

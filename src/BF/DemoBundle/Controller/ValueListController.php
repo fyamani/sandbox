@@ -1,22 +1,17 @@
 <?php
 
 namespace BF\DemoBundle\Controller;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Security\Core\SecurityContext;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use JMS\SecurityExtraBundle\Annotation\Secure;
 
-use BF13\BusinessApplicationBundle\Controller\baseController;
-use BF13\BusinessApplicationBundle\Breadcrumb\BreadcrumbControllerInterface;
+use BF13\Bundle\BusinessApplicationBundle\Controller\Controller;
+use BF13\Component\Breadcrumb\BreadcrumbControllerInterface;
 
 /**
  */
-class ValueListController extends baseController implements BreadcrumbControllerInterface
+class ValueListController extends Controller implements BreadcrumbControllerInterface
 {
     public function editValueAction($id)
     {
-        $data = $this->getDomainRepository()->retrieve('BF13\BusinessApplicationBundle\Entity\DataValueList', $id);
+        $data = $this->getDomainRepository()->retrieve('BF13\Bundle\BusinessApplicationBundle\Entity\DataValueList', $id);
 
         $form = $this->generateForm('BFDemoBundle:ValueListEditValueForm', $data);
 
@@ -43,7 +38,7 @@ class ValueListController extends baseController implements BreadcrumbController
 
     public function createValueAction()
     {
-        $data = $this->getDomainRepository()->retrieveNew('BF13\BusinessApplicationBundle\Entity\DataValueList');
+        $data = $this->getDomainRepository()->retrieveNew('BF13\Bundle\BusinessApplicationBundle\Entity\DataValueList');
 
         $form = $this->generateForm('BFDemoBundle:ValueListValueForm', $data);
 

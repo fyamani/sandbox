@@ -4,7 +4,7 @@ metadata:
 #    ValueList:
 #      widget:
 #        entity:
-#          class: BF13\BusinessApplicationBundle\Entity\ValueList
+#          class: BF13\Bundle\BusinessApplicationBundle\Entity\ValueList
 #          property: name
     value_key:
       widget:
@@ -16,7 +16,7 @@ metadata:
           label: Valeur
   subforms:
     ValueList:
-      data_class: BF13\BusinessApplicationBundle\Entity\ValueList
+      data_class: BF13\Bundle\BusinessApplicationBundle\Entity\ValueList
       fields:
         name:
           widget:

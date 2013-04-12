@@ -1,18 +1,18 @@
 <?php
 
 namespace BF\DemoBundle\Controller;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 use Symfony\Component\Security\Core\SecurityContext;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
-use BF13\BusinessApplicationBundle\Controller\baseController;
-use BF13\BusinessApplicationBundle\Breadcrumb\BreadcrumbControllerInterface;
+use BF13\Bundle\BusinessApplicationBundle\Controller\Controller;
+use BF13\Component\Breadcrumb\BreadcrumbControllerInterface;
 
 /**
  */
-class SecuredController extends baseController implements BreadcrumbControllerInterface
+class SecuredController extends Controller implements BreadcrumbControllerInterface
 {
     /**
      * @Template()

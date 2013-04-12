@@ -2,12 +2,10 @@
 
 namespace BF\DemoBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use BF13\Bundle\BusinessApplicationBundle\Controller\Controller;
+use BF13\Component\Breadcrumb\BreadcrumbControllerInterface;
 
-use BF13\BusinessApplicationBundle\Controller\baseController;
-use BF13\BusinessApplicationBundle\Breadcrumb\BreadcrumbControllerInterface;
-
-class WelcomeController extends baseController implements BreadcrumbControllerInterface
+class WelcomeController extends Controller implements BreadcrumbControllerInterface
 {
     public function indexAction()
     {

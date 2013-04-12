@@ -2,11 +2,10 @@
 
 namespace BF\DemoBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-use BF13\BusinessApplicationBundle\Controller\baseController;
-use BF13\BusinessApplicationBundle\Breadcrumb\BreadcrumbControllerInterface;
+use BF13\Bundle\BusinessApplicationBundle\Controller\Controller;
+use BF13\Component\Breadcrumb\BreadcrumbControllerInterface;
 
 // these import the "@Route" and "@Template" annotations
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -14,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use BF\DemoBundle\Model\ContactMessage;
 
-class DemoController extends baseController implements BreadcrumbControllerInterface
+class DemoController extends Controller implements BreadcrumbControllerInterface
 {
     /**
      * @Template()

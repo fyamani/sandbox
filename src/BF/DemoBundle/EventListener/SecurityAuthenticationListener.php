@@ -1,11 +1,12 @@
 <?php
 namespace BF\DemoBundle\EventListener;
 
+use BF13\Component\Notification\Notification;
 class SecurityAuthenticationListener
 {
     protected $Notifier;
 
-    public function __construct($Notifier)
+    public function __construct(Notification $Notifier)
     {
         $this->Notifier = $Notifier;
     }
@@ -14,6 +15,6 @@ class SecurityAuthenticationListener
     {
         $username = $event->getAuthenticationToken()->getUser()->getUsername();
 
-        $this->Notifier->verifierMessage($username);
+        $this->Notifier->checkNewMessage($username);
     }
 }

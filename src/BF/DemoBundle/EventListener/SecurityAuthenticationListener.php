@@ -2,6 +2,7 @@
 namespace BF\DemoBundle\EventListener;
 
 use BF13\Component\Notification\Notification;
+
 class SecurityAuthenticationListener
 {
     protected $Notifier;

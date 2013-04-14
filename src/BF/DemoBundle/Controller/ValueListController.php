@@ -13,7 +13,7 @@ class ValueListController extends Controller implements BreadcrumbControllerInte
     {
         $data = $this->getDomainRepository()->retrieve('BF13\Bundle\BusinessApplicationBundle\Entity\DataValueList', $id);
 
-        $form = $this->generateForm('BFDemoBundle:ValueListEditValueForm', $data);
+        $form = $this->generateForm('BFDemoBundle:form:ValueListEditValueForm', $data);
 
         $request = $this->get('request');
 
@@ -40,7 +40,7 @@ class ValueListController extends Controller implements BreadcrumbControllerInte
     {
         $data = $this->getDomainRepository()->retrieveNew('BF13\Bundle\BusinessApplicationBundle\Entity\DataValueList');
 
-        $form = $this->generateForm('BFDemoBundle:ValueListValueForm', $data);
+        $form = $this->generateForm('BFDemoBundle:form:ValueListValueForm', $data);
 
         $request = $this->get('request');
 

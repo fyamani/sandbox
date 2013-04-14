@@ -30,19 +30,26 @@ class DemoController extends Controller implements BreadcrumbControllerInterface
     {
         $contactMessage = new ContactMessage();
 
-        $form = $this->generateForm('BFDemoBundle:ContactForm', $contactMessage);
+        $form = $this->generateForm('BFDemoBundle:form:ContactForm', $contactMessage);
 
         $request = $this->get('request');
         if ('POST' == $request->getMethod()) {
-            $form->bindRequest($request);
-            if ($form->isValid()) {
+            
+            try {
+                
+                $this->validateForm($form, $request);
+                
                 $mailer = $this->get('mailer');
-                // .. setup a message and send it
-                // http://symfony.com/doc/current/cookbook/email.html
 
-                $this->get('session')->setFlash('notice', 'Message sent!');
+                //actions
+                
+                $this->addSuccessMessage('Message sent!');
 
                 return new RedirectResponse($this->generateUrl('bf_demo'));
+                
+            } catch (\Exception $e) {
+                
+                
             }
         }
 
@@ -86,6 +93,7 @@ class DemoController extends Controller implements BreadcrumbControllerInterface
     public function callMessageAction()
     {
         $this->addSuccessMessage('demo success message');
+
         $this->addErrorMessage('demo error message');
 
         $url = $this->generateUrl('bf_demo_render_message');

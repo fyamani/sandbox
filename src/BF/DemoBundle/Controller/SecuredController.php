@@ -25,7 +25,7 @@ class SecuredController extends Controller implements BreadcrumbControllerInterf
             $error = $this->get('request')->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
         }
 
-        $form = $this->generateForm('BFDemoBundle:LoginForm');
+        $form = $this->generateForm('BFDemoBundle:form:LoginForm');
 
         return array('last_username' => $this->get('request')->getSession()->get(SecurityContext::LAST_USERNAME), 'error' => $error, 'form' => $form->createView());
     }

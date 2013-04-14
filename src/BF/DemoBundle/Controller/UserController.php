@@ -32,7 +32,7 @@ class UserController extends Controller implements BreadcrumbControllerInterface
             ->setContent('Contenu')
             ;
 
-        $form = $this->generateForm('BFDemoBundle:PosterMessage', $message);
+        $form = $this->generateForm('BFDemoBundle:form:PosterMessage', $message);
 
         $request = $this->get('request');
 

@@ -44,7 +44,7 @@ class UserController extends Controller implements BreadcrumbControllerInterface
             {
                 $notifier = $this->get('bf13.app.notification');
 
-                $notifier->ajouterMessage($message);
+                $notifier->addMessage($message);
 
                 $this->addSuccessMessage('Votre message a été posté.');
 

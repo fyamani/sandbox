@@ -33,6 +33,7 @@ class DemoController extends Controller implements BreadcrumbControllerInterface
         $form = $this->generateForm('BFDemoBundle:form:ContactForm', $contactMessage);
 
         $request = $this->get('request');
+        
         if ('POST' == $request->getMethod()) {
             
             try {

@@ -1,0 +1,23 @@
+
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     bf13_generator
+    database_user:     root
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            fr
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    tpl_path: template/core-admin3
+    
+    bf13_api_url: 
+    bf13_api_call: 
+    bf13_api_auth: 
+    

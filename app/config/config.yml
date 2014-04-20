@@ -67,3 +67,7 @@ swiftmailer:
     password:  %mailer_password%
     spool:     { type: memory }
 
+bf13_business_application:
+    api_auth: "%bf13_api_auth%"
+    api_url: "%bf13_api_url%"
+    api_call: "%bf13_api_call%"

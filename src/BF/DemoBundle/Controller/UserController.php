@@ -38,7 +38,7 @@ class UserController extends Controller implements BreadcrumbControllerInterface
 
         if ('POST' == $request->getMethod()) {
 
-            $form->bindRequest($request);
+            $form->submit($request);
 
             if($form->isValid())
             {

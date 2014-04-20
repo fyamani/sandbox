@@ -33,24 +33,24 @@ class DemoController extends Controller implements BreadcrumbControllerInterface
         $form = $this->generateForm('BFDemoBundle:form:ContactForm', $contactMessage);
 
         $request = $this->get('request');
-        
+
         if ('POST' == $request->getMethod()) {
-            
+
             try {
-                
+
                 $this->validateForm($form, $request);
-                
+
                 $mailer = $this->get('mailer');
 
                 //actions
-                
+
                 $this->addSuccessMessage('Message sent!');
 
                 return new RedirectResponse($this->generateUrl('bf_demo'));
-                
+
             } catch (\Exception $e) {
-                
-                
+
+
             }
         }
 
@@ -105,7 +105,7 @@ class DemoController extends Controller implements BreadcrumbControllerInterface
     public function renderMessageAction()
     {
         $code_data = array(
-                'Controller' => array('file' => __FILE__, 'type' => 'php', 'highlight' => array(89, 90)),
+                'Controller' => array('file' => __FILE__, 'type' => 'php', 'highlight' => array(96, 98)),
         );
 
         return $this->render('BFDemoBundle:Demo:render_message.html.twig', array('code_data' => $code_data));

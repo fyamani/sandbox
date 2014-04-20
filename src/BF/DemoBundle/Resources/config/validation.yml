@@ -5,4 +5,4 @@ BF\DemoBundle\Model\ContactMessage:
       - NotNull: ~
     message:
       - NotNull: ~
-      - MinLength: 3
+      - Length: { min: 3 }

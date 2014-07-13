@@ -17,7 +17,7 @@ parameters:
 
     tpl_path: template/core-admin3
     
-    bf13_api_url: 
-    bf13_api_call: 
-    bf13_api_auth: 
+    bf13_api_url: null
+    bf13_api_auth: null
+    bf13_api_token: null
     

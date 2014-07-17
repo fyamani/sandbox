@@ -25,7 +25,7 @@
 		"elao/web-profiler-extra-bundle" : "dev-master",
 		"jms/security-extra-bundle" : "~1.5",
 		"jms/di-extra-bundle" : "~1.4",
-		"bf13/bf13" : "dev-master",
+		"bf13/bf13" : "1.0.0-beta",
 		"easybook/geshi" : "~1.0"
 	},
 	"scripts" : {

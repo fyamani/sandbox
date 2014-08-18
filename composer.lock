@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/BF13/BF13.git",
-                "reference": "528591c3391546bf60749899ef834b498a7769e6"
+                "reference": "2f00d58864da175d4686c3561425747fe1495b67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BF13/BF13/zipball/528591c3391546bf60749899ef834b498a7769e6",
-                "reference": "528591c3391546bf60749899ef834b498a7769e6",
+                "url": "https://api.github.com/repos/BF13/BF13/zipball/2f00d58864da175d4686c3561425747fe1495b67",
+                "reference": "2f00d58864da175d4686c3561425747fe1495b67",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
             "keywords": [
                 "App core"
             ],
-            "time": "2014-08-11 16:30:27"
+            "time": "2014-08-18 16:48:10"
         },
         {
             "name": "doctrine/annotations",

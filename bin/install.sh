@@ -1,4 +1,4 @@
-#!/bin/bash
+	#!/bin/bash
 set -e
 
 if [ -z "$1" ]; then
@@ -23,7 +23,7 @@ fi
 
 if [ ! -d vendor ]; then
     echo ">>> Installing dependencies"
-    php composer.phar update
+    php composer.phar install
 fi
 
 echo ">>> Installing assets"
@@ -35,5 +35,4 @@ php app/console doctrine:schema:update --force
 
 echo ">>> Dumping assetic"
 # rm -Rf web/{css,js}/*
-php app/console assetic:dump web
-php app/console assetic:dump web --env=prod
+php app/console assetic:dump web --env=$env

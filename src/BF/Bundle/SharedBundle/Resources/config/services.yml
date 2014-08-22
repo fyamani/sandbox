@@ -1,0 +1,7 @@
+parameters:
+#    bf_shared.example.class: BF\Bundle\SharedBundle\Example
+
+services:
+#    bf_shared.example:
+#        class: %bf_shared.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

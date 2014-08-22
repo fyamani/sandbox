@@ -1,4 +1,3 @@
-bf_demo:
-    resource: "@BFDemoBundle/Resources/config/routing.yml"
-    prefix:   /bf/demo
-
+bf_shared:
+    resource: "@BFSharedBundle/Resources/config/routing.yml"
+    prefix:   /

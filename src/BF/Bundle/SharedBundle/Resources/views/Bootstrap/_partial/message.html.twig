@@ -1,0 +1,8 @@
+{% for message_type, messages in app.session.FlashBag.all %}
+    <div class="alert alert-block alert-{{ message_type }}">
+        <a class="close" data-dismiss="alert" href="#"><i class="icon-large icon-remove-circle"></i></a>
+        {% for message in messages %}
+            <h4>{{ message |raw }}</h4>
+        {% endfor %}
+    </div>
+{% endfor %}

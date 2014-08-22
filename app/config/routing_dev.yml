@@ -2,6 +2,10 @@ _welcome:
     pattern:  /
     defaults: { _controller: BFDemoBundle:Welcome:index }
 
+bf_demo:
+    resource: "@BFDemoBundle/Resources/config/routing.yml"
+    prefix:   /bf/demo
+
 _wdt:
     resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
     prefix:   /_wdt

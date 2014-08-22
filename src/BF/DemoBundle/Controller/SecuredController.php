@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
-use BF13\Bundle\BusinessApplicationBundle\Controller\Controller;
+use BF\Bundle\SharedBundle\Controller\Controller;
 use BF13\Component\Breadcrumb\BreadcrumbControllerInterface;
 
 /**

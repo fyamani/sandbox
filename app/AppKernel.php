@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new BF13\Bundle\BusinessApplicationBundle\BF13BusinessApplicationBundle(),
+            new BF\Bundle\SharedBundle\BFSharedBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

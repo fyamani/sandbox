@@ -4,7 +4,7 @@ namespace BF\DemoBundle\Controller;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-use BF13\Bundle\BusinessApplicationBundle\Controller\Controller;
+use BF\Bundle\SharedBundle\Controller\Controller;
 use BF13\Component\Breadcrumb\BreadcrumbControllerInterface;
 
 // these import the "@Route" and "@Template" annotations

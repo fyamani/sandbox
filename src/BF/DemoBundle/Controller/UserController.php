@@ -1,10 +1,9 @@
 <?php
 namespace BF\DemoBundle\Controller;
 
-use BF13\Bundle\BusinessApplicationBundle\Controller\Controller;
+use BF\Bundle\SharedBundle\Controller\Controller;
 
 use BF13\Component\Breadcrumb\BreadcrumbControllerInterface;
-
 use BF13\Component\Notification\NotificationMessage;
 
 /**

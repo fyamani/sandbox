@@ -1,0 +1,10 @@
+<ul class="nav nav-tabs">
+{% for menu, content in childsBreadcrumb() %}
+{#         <h6 class="muted">{{ menu }}</h6>#}
+        {% for route, data in content %}
+            {% if data.hidden is not defined or data.hidden != true %}
+            <li {% if data.active %}class="active"{% endif %}><a href="{{ path(route) }}">{{ data.label }}</a></li>
+            {% endif %}
+        {% endfor %}
+{% endfor %}
+</ul>

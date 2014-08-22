@@ -26,13 +26,13 @@ twig:
     strict_variables: %kernel.debug%
     form:
         resources:
-            - 'BF13BusinessApplicationBundle:Bootstrap/_form:twitterbootstrap_fields.html.twig'
+            - 'BFSharedBundle:Bootstrap/_form:twitterbootstrap_fields.html.twig'
 
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ BFDemoBundle, BF13BusinessApplicationBundle ]
+    bundles:        [ BFSharedBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

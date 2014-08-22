@@ -1,0 +1,4 @@
+BF\Bundle\SharedBundle\ValidateAction:
+  properties: 
+    confirm:
+      - 'True': { message: "Vous devez cochez la case !" }

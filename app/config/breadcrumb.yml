@@ -1,4 +1,14 @@
-# Structure de l'application
+Default:
+    Welcome:
+        label: Welcome
+        icon: icon-home
+        default: true
+        nodes:
+            _welcome:
+                label: Index
+                submenu: Index
+
+#application démo
 Public:
     Welcome:
         label: Welcome
